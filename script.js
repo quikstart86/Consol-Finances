@@ -107,15 +107,37 @@ for (let i = 0; i < totalMonths; i++) {
 }
 console.log(`Total: $${profitLoss}`);
 
-// Average Change - Intialise avgChange as 0.
+// Created an array to store month-to-month changes
+var mmChange = [];
 
-let avgChange = 0;
+// Iterate through each month starting from the second month
+for (let i = 1; i < totalMonths; i++) {
+  // Calculate the month-to-month change by subtracting the previous month's value from the current month's value
+  let change = finances[i][1] - finances[i - 1][1];
 
-// then do the formula : avgChange = (profitLoss/( totalMonths) - 1))  .This will give you the Average Change
+  // Push the calculated change to the mmChange array
+  mmChange.push(change);
+}
 
-avgChange = `${profitLoss / totalMonths - 1}`;
+let sumChanges = 0;
 
-// console it to display the 'Average Change'
+for (let i = 0; i < mmChange.length; i++) {
+  sumChanges += mmChange[i];
+}
+
+let avgChange = (sumChanges / mmChange.length).toFixed(2);
 
 console.log(`Average Change: $${Intl.NumberFormat("en-US").format(avgChange)}`);
+
+
+
+
+
+
+
+
+
+
+
+
 
