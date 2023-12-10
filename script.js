@@ -87,7 +87,7 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-// PRINTS AND STARTS THE REPORT
+// PRINTS AND STARTS THE REPORT LOG
 
 console.log(`Financial Analysis`);
 console.log(`------------------`);
@@ -116,11 +116,11 @@ console.log(`Total: $${profitLoss}`);
 
 var mmChange = [];
 
-// Iterate through each month starting from the second month
+// Iterates through each month starting from the second month
 
 for (let i = 1; i < totalMonths; i++) {
 
-  // Calculate the month-to-month change by subtracting the previous month's value from the current month's value
+  // Calculates the month-to-month change by subtracting the previous month's value from the current month's value
 
   let change = finances[i][1] - finances[i - 1][1];
 
@@ -162,10 +162,11 @@ for (let i = 1; i < totalMonths; i++) {
 
   if (change > maxChange) {
     maxChange = change;
-    monthMaxChange = finances[i][0]; // Store the month with the greatest increase
+    monthMaxChange = finances[i][0]; // Stores the month with the greatest increase
   }
 }
-// Print the result of 'Greatest Increase'
+// Prints the result of 'Greatest Increase' formatted with USD symbol and comma separations
+
 console.log(
   `Greatest Increase in Profits/Losses: ${monthMaxChange} $${Intl.NumberFormat(
     "en-US"
