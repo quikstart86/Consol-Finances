@@ -92,11 +92,13 @@ var finances = [
 console.log(`Financial Analysis`);
 console.log(`------------------`);
 
+
 // CALCULATING TOTAL MONTHS
 // Creating totalMonths formula by using the fiances array and .length then console.log it as 'Total number of Months'
 
 let totalMonths = finances.length;
 console.log(`Total Months: ${totalMonths}`);
+
 
 // CALCULATING PROFIT/LOSS TOTAL
 // creating the loop to calculate the total profit/loss. Used a for loop which checks the financial array and adds it together. Then prints to consol "'Total"
@@ -110,6 +112,7 @@ for (let i = 0; i < totalMonths; i++) {
 // Prints Total
 
 console.log(`Total: $${profitLoss}`);
+
 
 // CALCULATING THE MONTH-ON-MONTH CHANGE 
 // Created an array to store month-to-month changes
@@ -129,6 +132,7 @@ for (let i = 1; i < totalMonths; i++) {
   mmChange.push(change);
 }
 
+
 // CALCULATING THE AVERAGE CHANGE
 //  To calculate the Average change using month-on-month change and sumChange
 
@@ -142,8 +146,6 @@ let avgChange = (sumChanges / mmChange.length).toFixed(2);
 // PrintS Average Change to Console
 
 console.log(`Average Change: $${Intl.NumberFormat("en-US").format(avgChange)}`);
-
-
 
 
 // CALCULATING GREATEST INCREASE
@@ -172,9 +174,6 @@ console.log(
     "en-US"
   ).format(maxChange)}`
 );
-
-
-
 
 
 // CALCULATING GREATEST DECREASE

@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Console Finances</title>
 
 </head>
+
 <body>
-    <h1>Open the Console to See the Magic ✨!</h1>
 
-
-    Financial Analysis 
-    ----------------
-    Total Months: 86
-    Total: $38382578
-    Average Change: -2315.12
-    Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
-    Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
-
+    <section>
+        <h1 class="title">Financial Analysis</h1>
+        <table class="table tableStyle">
+            <thead>
+                <tr>
+                    <th scope="col"><strong>Figure Title</strong></th>
+                    <th scope="col">Figure</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Total Months:</th>
+                    <td>86 Months</td>
+                </tr>
+                <tr>
+                    <th scope="row">Total:</th>
+                    <td>$38382578</td>
+                </tr>
+                <tr>
+                    <th scope="row">Average Change:</th>
+                    <td colspan="2">$-2,315.12</td>
+                </tr>
+                <tr>
+                    <th scope="row">Greatest Increase:</th>
+                    <td colspan="2">Feb-2012 $1,926,159</td>
+                </tr>
+                <tr>
+                    <th scope="row">Greatest Decrease:</th>
+                    <td colspan="2">Sep-2013 $-2,196,167</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
     <script src="./script.js"></script>
 </body>
+
 </html>
