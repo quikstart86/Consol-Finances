@@ -87,54 +87,118 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-// Prints the title and dashed lines
+// PRINTS AND STARTS THE REPORT
 
 console.log(`Financial Analysis`);
 console.log(`------------------`);
 
-// Creating totalMonths formula by using the fiances array and .length then console.log it as 'Total Months'
+// CALCULATING TOTAL MONTHS
+// Creating totalMonths formula by using the fiances array and .length then console.log it as 'Total number of Months'
 
 let totalMonths = finances.length;
 console.log(`Total Months: ${totalMonths}`);
-// Intialise profit/loss
+
+// CALCULATING PROFIT/LOSS TOTAL
+// creating the loop to calculate the total profit/loss. Used a for loop which checks the financial array and adds it together. Then prints to consol "'Total"
 
 let profitLoss = 0;
-
-// creating the loop to calculate the total profit/loss. Do this by creating a for loop which checks the finacial array and adds it all together. Then prints to consol "'Total"
 
 for (let i = 0; i < totalMonths; i++) {
   profitLoss = profitLoss + finances[i][1];
 }
+
+// Prints Total
+
 console.log(`Total: $${profitLoss}`);
 
+// CALCULATING THE MONTH-ON-MONTH CHANGE 
 // Created an array to store month-to-month changes
+
 var mmChange = [];
 
 // Iterate through each month starting from the second month
+
 for (let i = 1; i < totalMonths; i++) {
+
   // Calculate the month-to-month change by subtracting the previous month's value from the current month's value
+
   let change = finances[i][1] - finances[i - 1][1];
 
   // Push the calculated change to the mmChange array
+
   mmChange.push(change);
 }
+
+// CALCULATING THE AVERAGE CHANGE
+//  To calculate the Average change using month-on-month change and sumChange
 
 let sumChanges = 0;
 
 for (let i = 0; i < mmChange.length; i++) {
   sumChanges += mmChange[i];
 }
-
 let avgChange = (sumChanges / mmChange.length).toFixed(2);
+
+// PrintS Average Change to Console
 
 console.log(`Average Change: $${Intl.NumberFormat("en-US").format(avgChange)}`);
 
 
 
 
+// CALCULATING GREATEST INCREASE
+let maxChange = -Infinity;
+let monthMaxChange;
+
+// Iterate through each month to calculate month-to-month changes
+
+for (let i = 1; i < totalMonths; i++) {
+
+  // Calculate the change by subtracting the previous month's value from the current month's value
+
+  let change = finances[i][1] - finances[i - 1][1];
+
+  // If the calculated change is greater than the current maximum change, update the variables
+
+  if (change > maxChange) {
+    maxChange = change;
+    monthMaxChange = finances[i][0]; // Store the month with the greatest increase
+  }
+}
+// Print the result of 'Greatest Increase'
+console.log(
+  `Greatest Increase in Profits/Losses: ${monthMaxChange} $${Intl.NumberFormat(
+    "en-US"
+  ).format(maxChange)}`
+);
 
 
 
+
+
+// CALCULATING GREATEST DECREASE
+let minChange = Infinity;
+let monthMinChange;
+
+for (let i = 1; i < totalMonths; i++) {
+
+  // Calculate the change by subtracting the previous month's value from the current month's value
+
+  let change = finances[i][1] - finances[i - 1][1];
+
+  if (change < minChange) {
+    minChange = change;
+    monthMinChange = finances[i][0]; // Stores month with greatest decrease
+  }
+}
+
+// Print the result of 'Greatest Decrease'
+
+console.log(
+  `Greatest Decrease in Profits/Losses: ${monthMinChange} $${Intl.NumberFormat(
+    "en-US"
+  ).format(minChange)}`
+);
 
 
 
